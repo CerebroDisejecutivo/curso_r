@@ -42,7 +42,7 @@ for(i in 1:20){
                            mean_rt = c(800, 1300), 
                            sd_rt = c(300, 500))
   
-  write.csv(list[[i]], file = here("simu_data", paste0(sub_id[i], ".csv")))
+  write.csv(list[[i]], file = here("simu_data", paste0(sub_id[i], ".csv")), row.names = FALSE)
 }
 
 
