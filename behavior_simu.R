@@ -1,4 +1,5 @@
 library(truncnorm)
+library(here)
 
 behavior_simu <- function(n_blocks, 
                           conditions, 
@@ -28,11 +29,9 @@ behavior_simu <- function(n_blocks,
   df
 }
 
-
+dir.create(here("simu_data"), showWarnings = FALSE)
 set.seed(123)  
 sub_id <- replicate(20, paste(sample(0:9, 4), collapse = ""))
-
-set.seed(123)
 list <- vector(mode = "list", 20L)
 names(list) <- sub_id
 for(i in 1:20){
@@ -42,4 +41,8 @@ for(i in 1:20){
                            success_prob = c(.9, .7), 
                            mean_rt = c(800, 1300), 
                            sd_rt = c(300, 500))
+  
+  write.csv(list[[i]], file = here("simu_data", paste0(sub_id[i], ".csv")))
 }
+
+
