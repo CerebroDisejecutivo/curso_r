@@ -87,3 +87,9 @@ mi_lista[c("letras", "booleano")]
 
 ### Objetos dentro de la lista
 mi_lista$letras[2]
+
+## La función subset
+head(iris)
+subset(iris, Sepal.Length >= 6)
+
+subset(iris, Sepal.Length >= 6 & Sepal.Width <= 3)

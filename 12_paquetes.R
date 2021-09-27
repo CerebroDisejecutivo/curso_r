@@ -15,3 +15,16 @@ here()
 library(here)
 
 here()
+
+
+
+# Escribir funciones propias ----------------------------------------------
+
+mi_funcion <- function(x, y){
+  (x^y + y^x)
+  
+}
+
+mi_funcion(2,4)
+
+mi_funcion(0,1000)
